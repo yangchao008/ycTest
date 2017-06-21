@@ -27,6 +27,7 @@ public class CounterFragment extends Fragment implements View.OnClickListener {
     private ContainerActivity mActivity;
 
     private View mContentView;
+
     private TextView mCountTextView;
 
     private CounterService mCounterService;
