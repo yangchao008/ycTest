@@ -37,6 +37,7 @@ public class MyCustomViewFragment extends Fragment implements AdapterView.OnItem
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContentView = inflater.inflate(R.layout.activity_main,container,false);
+        mContentView.findViewById(R.id.title_bar).setVisibility(View.GONE);
         setupViews();
         return mContentView;
     }
@@ -80,47 +81,63 @@ public class MyCustomViewFragment extends Fragment implements AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(getActivity(),ContainerActivity.class);
-        intent.putExtra(ContainerActivity.CLASS_NAME, CustomViewFragment.class.getName());
+        int layoutId = 0;
+        String title = "";
         switch (i){
             case 0:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview));
+                layoutId = R.layout.fragment_customview;
+                title = "自定义View";
                 break;
             case 1:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview2));
+                layoutId = R.layout.fragment_customview2;
+                title = "自定义View2";
                 break;
             case 2:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview3));
+                layoutId = R.layout.fragment_customview3;
+                title = "自定义View3";
                 break;
             case 3:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview4));
+                layoutId = R.layout.fragment_customview4;
+                title = "自定义View4";
                 break;
             case 4:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview5));
+                layoutId = R.layout.fragment_customview5;
+                title = "自定义View5";
                 break;
             case 5:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview6));
+                layoutId = R.layout.fragment_customview6;
+                title = "自定义View6";
                 break;
             case 6:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview7));
+                layoutId = R.layout.fragment_customview7;
+                title = "自定义View7";
                 break;
             case 7:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview8));
+                layoutId = R.layout.fragment_customview8;
+                title = "自定义View8";
                 break;
             case 8:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview9));
+                layoutId = R.layout.fragment_customview9;
+                title = "自定义View9";
                 break;
             case 9:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview10));
+                layoutId = R.layout.fragment_customview10;
+                title = "自定义View10";
                 break;
             case 10:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview11));
+                layoutId = R.layout.fragment_customview11;
+                title = "自定义View11";
                 break;
             case 11:
-                intent.putExtras(CustomViewFragment.getBundle(R.layout.fragment_customview12));
+                layoutId = R.layout.fragment_customview12;
+                title = "自定义View12";
                 break;
             default:
                 break;
         }
+        intent.putExtra(ContainerActivity.CLASS_NAME, CustomViewFragment.class.getName());
+        intent.putExtra(ContainerActivity.TITLE, title);
+        intent.putExtras(CustomViewFragment.getBundle(layoutId));
         startActivity(intent);
     }
 

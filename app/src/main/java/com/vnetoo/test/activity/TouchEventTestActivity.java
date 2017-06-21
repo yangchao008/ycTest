@@ -3,6 +3,7 @@ package com.vnetoo.test.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ public class TouchEventTestActivity extends FragmentActivity implements View.OnC
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivty_touchevent);
+        findViewById(R.id.btn_back).setOnClickListener(this);
+
         findViewById(R.id.btn_click).setOnClickListener(this);
         findViewById(R.id.btn_click2).setOnClickListener(this);
         findViewById(R.id.btn_click3).setOnClickListener(this);
@@ -30,8 +33,11 @@ public class TouchEventTestActivity extends FragmentActivity implements View.OnC
 
     @Override
     public void onClick(View view) {
-        String text ;
+        String text ="" ;
         switch (view.getId()){
+            case R.id.btn_back:
+                finish();
+                break;
             case R.id.btn_click:
                 text = "点了按钮1";
                 break;
@@ -51,7 +57,8 @@ public class TouchEventTestActivity extends FragmentActivity implements View.OnC
                 text = "未知";
                 break;
         }
-        Toast.makeText(this,text,Toast.LENGTH_SHORT).show();
+        if (!TextUtils.isEmpty(text))
+            Toast.makeText(this,text,Toast.LENGTH_SHORT).show();
     }
 
     /***

@@ -19,4 +19,35 @@
     <dimen name="text_9">9sp</dimen>
     <dimen name="text_8">8sp</dimen>
     <dimen name="text_7">7sp</dimen>
+
+    <!--horizontal-->
+    <dimen name="space_horizontal_8">8dp</dimen>
+    <dimen name="space_horizontal_left_20">20dp</dimen>
+    <dimen name="space_horizontal_left_12">12dp</dimen>
+    <dimen name="space_horizontal_right_15">15dp</dimen>
+    <dimen name="space_horizontal_right_12">12dp</dimen>
+    <dimen name="space_horizontal_center_5">5dp</dimen>
+
+
+    <!--vertical-->
+    <dimen name="space_vertical_7">7dp</dimen>
+    <dimen name="space_vertical_8">8dp</dimen>
+    <dimen name="space_vertical_10">10dp</dimen>
+    <dimen name="space_vertical_13">13dp</dimen>
+    <dimen name="space_vertical_15">15dp</dimen>
+    <dimen name="space_vertical_20">20dp</dimen>
+
+
+    <!--height-->
+    <dimen name="title_height_44">44dp</dimen>
+    <dimen name="edit_height_44">44dp</dimen>
+
+    <dimen name="height_58">58dp</dimen>
+    <dimen name="height_50">50dp</dimen>
+    <dimen name="height_37">37dp</dimen>
+
+    <dimen name="dialog_with">254dp</dimen>
+    <!--radius-->
+    <dimen name="button_radius5">5dp</dimen>
+    <dimen name="bg_radius3">3dp</dimen>
 </resources>

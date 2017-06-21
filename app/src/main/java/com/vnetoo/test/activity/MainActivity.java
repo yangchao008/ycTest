@@ -27,7 +27,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     public static final int TOUCH_EVENT_TEST = 5;
     public static final int CUSTOM_VIEW = 6;
 
-    private final String[] mListData = {"test", "计数器（Service,广播）", "Download Manager","百度地图","百度地图2222","Android中触摸事件传递",
+    private final String[] mListData = {"test", "计数器（Service,广播）", "Download Manager","百度地图定位","百度地图点移动","Android中触摸事件传递",
             "自定义View"};
     private final int[] mListId = {TEST,COUNTER,DOWNLOAD_MANAGER,BAIDU_MAP,BAIDU_MAP_22,TOUCH_EVENT_TEST,CUSTOM_VIEW};
 
@@ -41,6 +41,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
     private void setupViews() {
         mAdapter = new MyAdapter();
+        findViewById(R.id.btn_back).setVisibility(View.GONE);
         ListView listView = (ListView) findViewById(R.id.lv_main);
         listView.setAdapter(mAdapter);
         listView.setOnItemClickListener(this);
@@ -64,31 +65,39 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         Intent intent = new Intent(this,ContainerActivity.class);
+        String className = "",title = "";
         switch ((int)id){
             case TEST:
 //                startActivity(new Intent(this, com.vnetoo.mymodule.MainActivity.class));
                 return;
             case COUNTER:
-                intent.putExtra(ContainerActivity.CLASS_NAME, CounterFragment.class.getName());
+                className = CounterFragment.class.getName();
+                title = "计数器";
                 break;
             case DOWNLOAD_MANAGER:
-                intent.putExtra(ContainerActivity.CLASS_NAME, SimpleDownloadTestFragment.class.getName());
+                className = SimpleDownloadTestFragment.class.getName();
+                title = "下载器";
                 break;
             case BAIDU_MAP:
-                intent.putExtra(ContainerActivity.CLASS_NAME, MapFragment.class.getName());
+                className = MapFragment.class.getName();
+                title = "地图定位";
                 break;
             case BAIDU_MAP_22:
-                intent.putExtra(ContainerActivity.CLASS_NAME, BaiduMapFragment2.class.getName());
+                className = BaiduMapFragment2.class.getName();
+                title = "地图上点移动";
                 break;
             case TOUCH_EVENT_TEST:
                 startActivity(new Intent(this, TouchEventTestActivity.class));
                 return;
             case CUSTOM_VIEW:
-                intent.putExtra(ContainerActivity.CLASS_NAME, MyCustomViewFragment.class.getName());
+                className = MyCustomViewFragment.class.getName();
+                title = "自定义View";
                 break;
             default:
                 break;
         }
+        intent.putExtra(ContainerActivity.TITLE, title);
+        intent.putExtra(ContainerActivity.CLASS_NAME, className);
         startActivity(intent);
     }
 }

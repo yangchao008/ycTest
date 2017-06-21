@@ -48,7 +48,7 @@ public class MyAdapter extends BaseAdapter{
             holder.tv_title.setTextColor(MyApplication.sContext.getResources()
                     .getColor(R.color.text_black3));
             holder.tv_title.setTextSize(15);
-            holder.tv_title.setPadding(20,20,0,20);
+            holder.tv_title.setPadding(30,30,30,30);
             view.setTag(holder);
         }else {
             holder = (ViewHolder) view.getTag();
