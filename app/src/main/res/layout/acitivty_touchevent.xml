@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.vnetoo.test.views.MyViewGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.vnetoo.test.views.MyView
+            android:id="@+id/btn_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="初始状态" />
+
+    </com.vnetoo.test.views.MyViewGroup>
+
+    <com.vnetoo.test.views.MyViewGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.vnetoo.test.views.MyView2
+            android:id="@+id/btn_click2"
+            android:text="MyView不消费"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.vnetoo.test.views.MyViewGroup>
+
+    <com.vnetoo.test.views.MyViewGroup2
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.vnetoo.test.views.MyView2
+            android:id="@+id/btn_click3"
+            android:text="MyView不消费和MyViewGroup消费"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.vnetoo.test.views.MyViewGroup2>
+
+    <com.vnetoo.test.views.MyViewGroup3
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.vnetoo.test.views.MyView
+            android:id="@+id/btn_click4"
+            android:text="MyViewGroup拦截"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.vnetoo.test.views.MyViewGroup3>
+
+    <com.vnetoo.test.views.MyViewGroup4
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.vnetoo.test.views.MyView
+            android:id="@+id/btn_click5"
+            android:text="MyViewGroup拦截,并且消费"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.vnetoo.test.views.MyViewGroup4>
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.vnetoo.test.views.CustomView12
+        android:id="@+id/customView12"
+        custom:yc_background_color="#d6d6d6"
+        custom:yc_boundary_color="#aaaaaa"
+        custom:yc_progress_color="#f88944"
+        custom:yc_progress = "10"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+</LinearLayout>

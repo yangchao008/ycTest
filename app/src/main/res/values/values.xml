@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomView12">
+        <attr name="yc_boundary_color" format="color"/>
+        <attr name="yc_background_color" format="color"/>
+        <attr name="yc_progress_color" format="color"/>
+        <attr name="yc_progress" format="integer"/>
+    </declare-styleable>
+</resources>

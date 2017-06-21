@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--text-->
+    <color name="text_main">#3382b3</color>
+    <color name="text_light_main">#76adce</color>
+
+    <color name="text_white">#fff</color>
+
+    <color name="text_black">#000000</color>
+    <color name="text_black3">#333333</color>
+
+    <color name="text_gray6">#666666</color>
+    <color name="text_gray9">#999999</color>
+
+    <color name="text_gray12">#cccccc</color>
+
+    <color name="text_red">#f5616e</color>
+
+    <color name="text_yellow">#FFFF00</color>
+
+    <!--bg-->
+    <color name="bg_main">#3382b3</color>
+    <color name="bg_white">#fff</color>
+
+    <color name="bg_gray14">#eee</color>
+    <color name="bg_gray">#e7e7e7</color>
+
+    <color name="bg_red">#f5616e</color>
+
+    <color name="bg_blue_light">#e7eff4</color>
+
+    <color name="bg_login_button_dis">#aecee0</color>
+
+    <color name="progress_bg">#3382b3</color>
+
+    <color name="progress">#3382b3</color>
+    <!--line-->
+    <color name="line_main">#3382b3</color>
+
+    <color name="line_divider">#cccccc</color>
+
+    <color name="line_login_edit">#d1dee2</color>
+
+</resources>

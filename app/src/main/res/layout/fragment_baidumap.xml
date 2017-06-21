@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:layout_height="wrap_content">
+
+            <Button android:layout_width="wrap_content"
+                    android:id="@+id/btn_ok"
+                    android:text="确定"
+                    android:layout_height="wrap_content"/>
+            <Button android:layout_width="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/btn_back"
+                    android:text="回去"
+                    android:layout_height="wrap_content"/>
+
+            <EditText android:layout_width="0dp"
+                      android:id="@+id/et_key"
+                      android:layout_marginLeft="50dp"
+                      android:hint="关键字"
+                      android:singleLine="true"
+                      android:layout_weight="1"
+                      android:layout_height="wrap_content"/>
+            <Button android:layout_width="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/btn_search"
+                    android:text="搜索"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="match_parent">
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1">
+                <com.baidu.mapapi.map.MapView
+                        android:id="@+id/bmapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true" />
+                <ImageView android:layout_width="wrap_content"
+                           android:layout_centerInParent="true"
+                           android:src="@drawable/ic_select"
+                           android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <ListView android:layout_width="match_parent"
+                      android:background="@color/bg_white"
+                      android:id="@+id/place_list"
+                      android:layout_weight="1"
+                      android:layout_height="0dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar android:layout_width="wrap_content"
+                 android:id="@+id/place_progressBar"
+                 android:layout_centerInParent="true"
+                 android:layout_height="wrap_content"/>
+</RelativeLayout>
