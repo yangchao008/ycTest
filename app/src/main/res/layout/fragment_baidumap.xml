@@ -47,7 +47,7 @@
                         android:clickable="true" />
                 <ImageView android:layout_width="wrap_content"
                            android:layout_centerInParent="true"
-                           android:src="@drawable/ic_select"
+                           android:src="@drawable/position_icon"
                            android:layout_height="wrap_content"/>
             </RelativeLayout>
 

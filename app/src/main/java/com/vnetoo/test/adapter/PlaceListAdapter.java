@@ -93,7 +93,7 @@ public class PlaceListAdapter extends BaseAdapter {
         holder.placeAddree.setText(mList.get(position).address);
         //根据重新加载的时候第position条item是否是当前所选择的，选择加载不同的图片
         if(notifyTip == position ){
-            holder.placeSelected.setBackgroundResource(R.drawable.icon_geo);
+            holder.placeSelected.setBackgroundResource(R.drawable.selected_icon);
         }
         else {
             holder.placeSelected.setBackgroundResource(Color.TRANSPARENT);
@@ -112,7 +112,7 @@ public class PlaceListAdapter extends BaseAdapter {
 // @Override
 // public void onClick(View v) {
 // // TODO Auto-generated method stub
-// mImg.setBackgroundResource(R.drawable.ic_select);
+// mImg.setBackgroundResource(R.drawable.position_icon);
 // }
 //
 // }

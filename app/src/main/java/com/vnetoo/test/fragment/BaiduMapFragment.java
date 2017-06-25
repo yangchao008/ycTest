@@ -5,8 +5,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
-import android.hardware.input.InputManager;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -359,7 +357,7 @@ public class BaiduMapFragment extends Fragment implements View.OnClickListener {
             mAdapter.notifyDataSetChanged();
 
             BitmapDescriptor mSelectIco = BitmapDescriptorFactory
-                    .fromResource(R.drawable.ic_select);
+                    .fromResource(R.drawable.position_icon);
             mBaiduMap.clear();
             PoiInfo info = mAdapter.getItem(position);
             LatLng la = info.location;
@@ -376,7 +374,7 @@ public class BaiduMapFragment extends Fragment implements View.OnClickListener {
             // 选中项打勾
             mSelectImg.setBackgroundResource(R.drawable.greywhite);
             mSelectImg = (ImageView) view.findViewById(R.id.place_select);
-            mSelectImg.setBackgroundResource(R.drawable.icon_geo);
+            mSelectImg.setBackgroundResource(R.drawable.selected_icon);
 
             // Uri mUri = Uri.parse("geo:39.940409,116.355257");
             // Intent mIntent = new Intent(Intent.ACTION_VIEW,mUri);
