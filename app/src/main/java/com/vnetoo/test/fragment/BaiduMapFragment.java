@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
@@ -103,9 +104,32 @@ public class BaiduMapFragment extends Fragment implements View.OnClickListener {
     public BDLocationListener myListener = new BDLocationListener() {
         @Override
         public void onReceiveLocation(BDLocation location) {
+            Log.d("11111","onReceiveLocation");
             // map view 销毁后不在处理新接收的位置
             if (location == null || mMapView == null)
                 return;
+            if (location.getLocType() == BDLocation.TypeGpsLocation){
+                // GPS定位结果
+                Log.d("11111","TypeGpsLocation");
+            } else if (location.getLocType() == BDLocation.TypeNetWorkLocation){
+                // 网络定位结果
+                Log.d("11111","TypeNetWorkLocation");
+            } else if (location.getLocType() == BDLocation.TypeOffLineLocation) {
+                // 离线定位结果
+                Log.d("11111","TypeOffLineLocation");
+//            } else if (location.getLocType() == BDLocation.TypeServerError) {
+//                //服务端网络定位失败，可以反馈IMEI号和大体定位时间到loc-bugs@baidu.com，会有人追查原因
+//                Log.d("11111","TypeServerError");
+//            } else if (location.getLocType() == BDLocation.TypeNetWorkException) {
+//                //网络不同导致定位失败，请检查网络是否通畅
+//                Log.d("11111","TypeNetWorkException");
+//            } else if (location.getLocType() == BDLocation.TypeCriteriaException) {
+//                //无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机
+//                Log.d("11111","TypeCriteriaException");
+            }else{
+                if (isFirstLoc)
+                    Toast.makeText(getActivity(),"定位失败，请检查位置权限或者网络正常打开",Toast.LENGTH_LONG).show();
+            }
             MyLocationData data = new MyLocationData.Builder()//
                     // .direction(mCurrentX)//
                     .accuracy(location.getRadius())//
@@ -242,7 +266,7 @@ public class BaiduMapFragment extends Fragment implements View.OnClickListener {
      */
     private void getCurrentLocation() {
         mBaiduMap.setMyLocationEnabled(true);
-        mLocationClient = new LocationClient(getContext());
+        mLocationClient = new LocationClient(getActivity());
         mLocationClient.registerLocationListener(myListener);
         LocationClientOption option = new LocationClientOption();
         option.setOpenGps(true);// 打开gps
@@ -294,7 +318,7 @@ public class BaiduMapFragment extends Fragment implements View.OnClickListener {
                 mCurrentInfo = new PoiInfo();
                 mCurrentInfo.address = result.getAddress();
                 mCurrentInfo.location = result.getLocation();
-                mCurrentInfo.name = "[当前位置]";
+                mCurrentInfo.name = "[位置]";
 
                 if (null == mCurrentPosition)
                     mCurrentPosition = mCurrentInfo;
