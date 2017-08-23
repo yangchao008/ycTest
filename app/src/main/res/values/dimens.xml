@@ -50,4 +50,5 @@
     <!--radius-->
     <dimen name="button_radius5">5dp</dimen>
     <dimen name="bg_radius3">3dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

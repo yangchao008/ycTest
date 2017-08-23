@@ -27,7 +27,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     public static final int TOUCH_EVENT_TEST = 5;
     public static final int CUSTOM_VIEW = 6;
 
-    private final String[] mListData = {"test", "计数器（Service,广播）", "Download Manager","百度地图定位","百度地图点移动","Android中触摸事件传递",
+    private final String[] mListData = {"new activity", "计数器（Service,广播）", "Download Manager","百度地图定位","百度地图点移动","Android中触摸事件传递",
             "自定义View"};
     private final int[] mListId = {TEST,COUNTER,DOWNLOAD_MANAGER,BAIDU_MAP,BAIDU_MAP_22,TOUCH_EVENT_TEST,CUSTOM_VIEW};
 
@@ -68,8 +68,9 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
         String className = "",title = "";
         switch ((int)id){
             case TEST:
-//                startActivity(new Intent(this, com.vnetoo.mymodule.MainActivity.class));
-                return;
+                className = NewActivityFragment.class.getName();
+                title = "new activity";
+                break;
             case COUNTER:
                 className = CounterFragment.class.getName();
                 title = "计数器";

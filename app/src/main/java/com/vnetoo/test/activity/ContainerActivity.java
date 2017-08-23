@@ -9,13 +9,15 @@ import android.widget.TextView;
 
 import com.vnetoo.test.R;
 import com.vnetoo.test.fragment.MapFragment;
+import com.vnetoo.test.fragment.NewActivityFragment;
+import com.vnetoo.test.fragment.dummy.DummyContent;
 
 /**
  * 内容摘要：
  * 完成日期：2017/3/20
  * 编码作者：杨超 .
  */
-public class ContainerActivity extends FragmentActivity implements View.OnClickListener {
+public class ContainerActivity extends FragmentActivity implements View.OnClickListener ,NewActivityFragment.OnListFragmentInteractionListener {
     public static final String CLASS_NAME = "class_name";
     public static final String BUNDLE_EXTRA = "bundle_extra";
     public static final String TITLE = "title";
@@ -60,5 +62,39 @@ public class ContainerActivity extends FragmentActivity implements View.OnClickL
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
+//        int position = Integer.parseInt(item.id);
+//        Intent intent = null;
+//        switch (position){
+//            case 1:
+//                intent = new Intent(this,MainActivity.class);
+//                break;
+//            case 2:
+//                break;
+//            case 3:
+//                break;
+//            case 4:
+//                break;
+//            case 5:
+//                break;
+//            case 6:
+//                break;
+//            case 7:
+//                break;
+//            case 8:
+//                break;
+//            case 9:
+//                break;
+//            case 10:
+//                break;
+//            default:
+//                return;
+//        }
+//        startActivity(intent);
+
     }
 }
