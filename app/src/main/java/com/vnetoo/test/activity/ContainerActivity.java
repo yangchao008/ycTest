@@ -1,5 +1,6 @@
 package com.vnetoo.test.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -67,34 +68,42 @@ public class ContainerActivity extends FragmentActivity implements View.OnClickL
     @Override
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
 
-//        int position = Integer.parseInt(item.id);
-//        Intent intent = null;
-//        switch (position){
-//            case 1:
-//                intent = new Intent(this,MainActivity.class);
-//                break;
-//            case 2:
-//                break;
-//            case 3:
-//                break;
-//            case 4:
-//                break;
-//            case 5:
-//                break;
-//            case 6:
-//                break;
-//            case 7:
-//                break;
-//            case 8:
-//                break;
-//            case 9:
-//                break;
-//            case 10:
-//                break;
-//            default:
-//                return;
-//        }
-//        startActivity(intent);
-
+        int position = Integer.parseInt(item.id);
+        Intent intent = null;
+        switch (position){
+            case 1:
+                intent = new Intent(this,BasicActivity.class);
+                break;
+            case 2:
+                intent = new Intent(this,BottomNavigationActivity.class);
+                break;
+            case 3:
+                intent = new Intent(this,EmptyActivity.class);
+                break;
+            case 4:
+                intent = new Intent(this,FullscreenActivity.class);
+                break;
+            case 5:
+                intent = new Intent(this,LoginActivity.class);
+                break;
+            case 6:
+                intent = new Intent(this,MyItemListActivity.class);
+                break;
+            case 7:
+                intent = new Intent(this,NavigationDrawerActivity.class);
+                break;
+            case 8:
+                intent = new Intent(this,ScrollingActivity.class);
+                break;
+            case 9:
+                intent = new Intent(this,SettingsActivity.class);
+                break;
+            case 10:
+                intent = new Intent(this,TabbedActivity.class);
+                break;
+            default:
+                return;
+        }
+        startActivity(intent);
     }
 }
