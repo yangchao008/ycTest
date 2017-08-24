@@ -15,14 +15,12 @@
                     android:text="确定"
                     android:layout_height="wrap_content"/>
             <Button android:layout_width="wrap_content"
-                    android:layout_marginLeft="20dp"
                     android:id="@+id/btn_back"
                     android:text="回去"
                     android:layout_height="wrap_content"/>
 
             <EditText android:layout_width="0dp"
                       android:id="@+id/et_key"
-                      android:layout_marginLeft="50dp"
                       android:hint="关键字"
                       android:singleLine="true"
                       android:layout_weight="1"

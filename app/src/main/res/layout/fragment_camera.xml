@@ -9,21 +9,14 @@
                   android:orientation="horizontal"
                   android:layout_height="wrap_content">
         <Button android:layout_width="wrap_content"
-                android:id="@+id/btn_location"
-                android:text="获取当前位置"
+                android:id="@+id/btn_front"
+                android:text="打开前置摄像头"
                 android:layout_height="wrap_content"/>
 
         <Button android:layout_width="wrap_content"
-                android:id="@+id/btn_open"
-                android:text="打开地图"
+                android:id="@+id/btn_rear"
+                android:text="打开后置摄像头"
                 android:layout_height="wrap_content"/>
     </LinearLayout>
-    <TextView android:layout_width="wrap_content"
-              android:id="@+id/tv_location"
-              android:padding="10dp"
-              android:layout_height="wrap_content"/>
-
-    <ImageView android:layout_width="wrap_content"
-               android:layout_height="wrap_content"/>
 
 </LinearLayout>
