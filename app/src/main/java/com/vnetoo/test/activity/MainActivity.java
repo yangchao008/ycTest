@@ -26,10 +26,11 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     public static final int BAIDU_MAP_22 = 4;
     public static final int TOUCH_EVENT_TEST = 5;
     public static final int CUSTOM_VIEW = 6;
+    public static final int OPEN_CAMERA = 7;
 
     private final String[] mListData = {"new activity", "计数器（Service,广播）", "Download Manager","百度地图定位","百度地图点移动","Android中触摸事件传递",
-            "自定义View"};
-    private final int[] mListId = {TEST,COUNTER,DOWNLOAD_MANAGER,BAIDU_MAP,BAIDU_MAP_22,TOUCH_EVENT_TEST,CUSTOM_VIEW};
+            "自定义View","打开前后摄像头"};
+    private final int[] mListId = {TEST,COUNTER,DOWNLOAD_MANAGER,BAIDU_MAP,BAIDU_MAP_22,TOUCH_EVENT_TEST,CUSTOM_VIEW,OPEN_CAMERA};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,10 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
             case CUSTOM_VIEW:
                 className = MyCustomViewFragment.class.getName();
                 title = "自定义View";
+                break;
+            case OPEN_CAMERA:
+                className = CameraFragment.class.getName();
+                title = mListData[OPEN_CAMERA];
                 break;
             default:
                 break;
