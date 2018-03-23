@@ -10,8 +10,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.baidu.platform.comapi.map.C;
 import com.vnetoo.test.R;
+import com.vnetoo.test.activity.BlueLightActivity;
+import com.vnetoo.test.activity.CameraTestActivity;
 import com.vnetoo.test.activity.ContainerActivity;
+import com.vnetoo.test.activity.ImgEditActivity;
+import com.vnetoo.test.activity.PhotoViewActivity;
+import com.vnetoo.test.activity.XImageViewActivity;
 import com.vnetoo.test.adapter.MyAdapter;
 import com.vnetoo.test.bean.BaseBean;
 
@@ -64,6 +70,11 @@ public class MyCustomViewFragment extends Fragment implements AdapterView.OnItem
         list.add("自定义view10-drawPath杯子中水消匿的效果");
         list.add("自定义view11-翻页效果尝试实现一");
         list.add("自定义view12-圆形进度");
+        list.add("自定义view13-调节色彩");
+        list.add("view14-PhotoView");
+        list.add("view15-XImageView");
+        list.add("view15-CameraTestActivity");
+        list.add("自定义view16-旋转图片");
 //        list.add("自定义view5");
 //        list.add("自定义view6");
         List<BaseBean> data = new ArrayList<BaseBean>();
@@ -131,6 +142,22 @@ public class MyCustomViewFragment extends Fragment implements AdapterView.OnItem
             case 11:
                 layoutId = R.layout.fragment_customview12;
                 title = "自定义View12";
+                break;
+            case 12:
+                startActivity(new Intent(getActivity(), BlueLightActivity.class));
+                return;
+            case 13:
+                startActivity(new Intent(getActivity(), PhotoViewActivity.class));
+                return;
+            case 14:
+                startActivity(new Intent(getActivity(), XImageViewActivity.class));
+                return;
+            case 15:
+                startActivity(new Intent(getActivity(), CameraTestActivity.class));
+                return;
+            case 16:
+                layoutId = R.layout.fragment_customview13;
+                title = "自定义View13";
                 break;
             default:
                 break;

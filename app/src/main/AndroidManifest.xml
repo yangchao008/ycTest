@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- 百度地图-权限 -->
@@ -62,6 +63,12 @@
             android:label="@string/title_activity_bottom_navigation"
             android:theme="@style/AppTheme" />
         <activity android:name=".activity.EmptyActivity" />
+
+        <activity android:name=".activity.ImgEditActivity" />
+        <activity android:name=".activity.XImageViewActivity" />
+        <activity android:name=".activity.PhotoViewActivity" />
+        <activity android:name=".activity.CameraTestActivity" />
+        <activity android:name=".activity.BlueLightActivity" />
         <activity
             android:name=".activity.FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

@@ -5,20 +5,20 @@ android {
     buildToolsVersion '25.0.0'
 
     //签名配置
-    signingConfigs {
-        debugConfig {
-            keyAlias "androiddebugkey"
-            keyPassword "android"
-            storeFile file("F:/TwiPlurk.keystore")
-            storePassword "android"
-        }
-        releaseConfig {
-            keyAlias "androiddebugkey"
-            keyPassword "android"
-            storeFile file("F:/TwiPlurk.keystore")
-            storePassword "android"
-        }
-    }
+//    signingConfigs {
+//        debugConfig {
+//            keyAlias "androiddebugkey"
+//            keyPassword "android"
+//            storeFile file("F:/TwiPlurk.keystore")
+//            storePassword "android"
+//        }
+//        releaseConfig {
+//            keyAlias "androiddebugkey"
+//            keyPassword "android"
+//            storeFile file("F:/TwiPlurk.keystore")
+//            storePassword "android"
+//        }
+//    }
 
     defaultConfig {
         applicationId "com.vnetoo.test"
@@ -43,10 +43,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.releaseConfig
+//            signingConfig signingConfigs.releaseConfig
         }
         debug {
-            signingConfig signingConfigs.releaseConfig
+//            signingConfig signingConfigs.releaseConfig
         }
     }
 }
@@ -80,4 +80,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:support-vector-drawable:24.2.1'
+
+    compile 'com.bm.photoview:library:1.4.1'
+
+    compile 'cn.kejin.ximageview:XImageView:1.0.1'
+
+
 }
