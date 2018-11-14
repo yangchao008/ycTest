@@ -27,11 +27,12 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
     public static final int TOUCH_EVENT_TEST = 5;
     public static final int CUSTOM_VIEW = 6;
     public static final int OPEN_CAMERA = 7;
+    public static final int DATA_BINDING_TEST = 8;
 
     private final String[] mListData = {"new activity", "计数器（Service,广播）", "Download Manager",
-            "百度地图定位","百度地图点移动","Android中触摸事件传递","自定义View","打开前后摄像头"};
+            "百度地图定位","百度地图点移动","Android中触摸事件传递","自定义View","打开前后摄像头","DtaBindingTest"};
     private final int[] mListId = {TEST,COUNTER,DOWNLOAD_MANAGER,BAIDU_MAP,BAIDU_MAP_22,
-            TOUCH_EVENT_TEST,CUSTOM_VIEW,OPEN_CAMERA};
+            TOUCH_EVENT_TEST,CUSTOM_VIEW,OPEN_CAMERA,DATA_BINDING_TEST};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,7 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-        Intent intent = new Intent(this,ContainerActivity.class);
+        Intent intent = new Intent();
         String className = "",title = "";
         switch ((int)id){
             case TEST:
@@ -100,9 +101,14 @@ public class MainActivity extends FragmentActivity implements AdapterView.OnItem
                 className = CameraFragment.class.getName();
                 title = mListData[OPEN_CAMERA];
                 break;
+            case DATA_BINDING_TEST:
+                intent.setClass(this,DataBindingTestActivity.class);
+                startActivity(intent);
+                return;
             default:
                 break;
         }
+        intent.setClass(this,ContainerActivity.class);
         intent.putExtra(ContainerActivity.TITLE, title);
         intent.putExtra(ContainerActivity.CLASS_NAME, className);
         startActivity(intent);
